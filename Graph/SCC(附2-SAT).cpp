@@ -37,3 +37,9 @@ void find_scc(int nn){
     }
     vs.clear();
 }
+
+/*
+i表示第i個敘述為真，i+n表示第i個敘述為假
+sccno[i]==sccno[i+n]相等=>炸掉
+sccno[i]>sccno[i+n] true
+*/
