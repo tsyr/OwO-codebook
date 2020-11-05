@@ -5,7 +5,7 @@ Lucas’ Theorem:
   For non-negative integer n,m and prime P,
   C(m,n) mod P = C(m/M,n/M) * C(m%M,n%M) mod P
   = mult_i ( C(m_i,n_i) )
-  where m_i is the i-th digit of m in base P.
+  where m_i is the i-th digit of m in base P, and note that when m_i < n_i, C(m_i,n_i)=0.
 3.13 	Sum of Two Squares Thm (Legendre)
   For a given positive integer N, let
   D1 = (# of d \in \N dividing N that d=1(mod 4))
