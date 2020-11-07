@@ -75,4 +75,3 @@ struct DLX{
 		}
 	}
 } dlx;
-
