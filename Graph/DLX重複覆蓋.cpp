@@ -52,8 +52,7 @@ struct DLX{
 			}
 		return ret;
 	}
-	void repeat_dance(int d)
-	{
+	void repeat_dance(int d){//d為遞迴深度
 		if (d + f() >= ansd) return; 
 		if (R[0] == 0){
 			if (d < ansd)
