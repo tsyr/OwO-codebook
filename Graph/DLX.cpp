@@ -19,6 +19,7 @@ struct DLX
         R[m] = 0, L[0] = m, SIZE = m;
         for (int i = 1; i <= n; i++)
             H[i] = -1;
+        ansd = INT_MAX;
     }
     void Link(int r, int c)
     {
