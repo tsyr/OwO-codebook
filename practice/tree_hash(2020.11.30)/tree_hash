@@ -1,0 +1,10 @@
+https://blog.csdn.net/weixin_42484877/article/details/102611896
+
+h[now] = 1 + sum ( h[x] * p[sz[x]+INIT] ) 
+x為now的兒子，對所有x求和，INIT=7
+p[i]為第i個質數
+
+換根dp不難(吧?
+
+https://oi-wiki.org/graph/tree-hash/
+
