@@ -1,6 +1,5 @@
 #define N 262144 * 4
-struct ntt
-{
+struct ntt {
     const int mod = 998244353;
     const int g = 3;
     int n, m, rev[N], bit = 0, len = 1;
