@@ -14,7 +14,6 @@ void push(Treap *a){
     Treap *swp = a->l;
     a->l = a->r;
     a->r = swp;
-    int swp2;
     if (a->l)
       a->l->tag ^= 1;
     if (a->r)
