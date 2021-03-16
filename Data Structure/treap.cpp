@@ -1,6 +1,8 @@
 struct Treap{
+  static Treap mem[maxn], *pmem;
   int sz, val, pri, tag;
   Treap *l, *r;
+  Treap() {}
   Treap(int _val){
     val = _val;
     sz = 1;
@@ -8,16 +10,15 @@ struct Treap{
     l = r = NULL;
     tag = 0;
   }
-};
+}Treap::mem[maxn], *Treap::pmem = Treap::mem;
+// new (Treap::pmem++) Treap(?)
+// void solve(){ ... (最後清空)Treap::pmem = Treap::mem;}
 void push(Treap *a){
   if (a->tag){
     Treap *swp = a->l;
-    a->l = a->r;
-    a->r = swp;
-    if (a->l)
-      a->l->tag ^= 1;
-    if (a->r)
-      a->r->tag ^= 1;
+    a->l = a->r,  a->r = swp;
+    if (a->l) a->l->tag ^= 1;
+    if (a->r) a->r->tag ^= 1;
     a->tag = 0;
   }
 }
