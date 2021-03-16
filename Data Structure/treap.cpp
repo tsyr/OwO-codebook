@@ -27,7 +27,6 @@ void pull(Treap *a){
   a->sz = Size(a->l) + Size(a->r) + 1;
 }
 Treap *merge(Treap *a, Treap *b){ 
-//a的val全小於b的val
   if (!a || !b)
     return a ? a : b;
   if (a->pri > b->pri){
