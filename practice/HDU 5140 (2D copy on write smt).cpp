@@ -97,9 +97,9 @@ ll query(node *t,int xl,int xr,int yl,int yr){
 	return res; 
 }
 
-int x[maxn],y[maxn];
+ll x[maxn],y[maxn];
 ll w[maxn];
-vector<int> b1,b2;
+vector<ll> b1,b2;
 
 int main()
 {
@@ -115,7 +115,7 @@ int main()
 		
 		b1.clear(),b2.clear();
 		for(int i=0;i<n;i++){
-			scanf("%lld%d%d",&w[i],&x[i],&y[i]);
+			scanf("%lld%lld%lld",&w[i],&x[i],&y[i]);
 			b1.push_back(x[i]),b2.push_back(y[i]);
 		}
 		b1.erase(unique(b1.begin(),b1.end()),b1.end());
@@ -139,6 +139,7 @@ int main()
 			yl=lower_bound(b2.begin(),b2.end(),yl)-b2.begin()+1;
 			xr=upper_bound(b1.begin(),b1.end(),xr)-b1.begin();
 			yr=upper_bound(b2.begin(),b2.end(),yr)-b2.begin();
+			
 			k=query(rt,xl,xr,yl,yr);
 			printf("%lld\n",k);
 		}
