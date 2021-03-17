@@ -118,6 +118,8 @@ int main()
 			scanf("%lld%lld%lld",&w[i],&x[i],&y[i]);
 			b1.push_back(x[i]),b2.push_back(y[i]);
 		}
+		sort(b1.begin(),b1.end());
+		sort(b2.begin(),b2.end());
 		b1.erase(unique(b1.begin(),b1.end()),b1.end());
 		b2.erase(unique(b2.begin(),b2.end()),b2.end());
 		for(int i=0;i<n;i++){
