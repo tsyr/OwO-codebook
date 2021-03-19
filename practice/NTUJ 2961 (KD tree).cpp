@@ -10,7 +10,7 @@ typedef pair<int, int> P;
 #define mod 998244353
 
 const int maxn = 400040;
-int n, op, xl, xr, yl, yr;
+int n, xl, xr, yl, yr;
 struct node
 {
     int x, y;
@@ -127,10 +127,10 @@ void insert(int i, int j, int t)
     s[cur].v[2] = j * t, s[cur].v[3] = (ll)i * j * t;
     insert(rt, cur);
 }
-ll trans(array<ll, 4> x) { return (xr + 1) * (yr + 1) * x[0] - (yr + 1) * x[1] - (xr + 1) * x[2] + x[3]; }
+ll trans(array<ll, 4> x) { return (ll)(xr + 1) * (yr + 1) * x[0] - (ll)(yr + 1) * x[1] - (ll)(xr + 1) * x[2] + x[3]; }
 
 int q;
-int h[maxn / 4], l[maxn / 4], r[maxn / 4];
+int h[maxn], l[maxn], r[maxn];
 
 int main()
 {
@@ -163,7 +163,7 @@ int main()
                 r[i] = n;
             //printf("l=%d r=%d\n", l[i], r[i]);
         }
-        cur = rt = 0;
+        cur = rt = t = 0;
         for (int i = 1; i <= n; i++)
         {
             insert(i, l[i], 1);
@@ -188,6 +188,8 @@ int main()
             ans += trans(query(rt));
             printf("%lld\n", ans);
         }
+        for (int i = 0; i <= 4 * n; i++)
+            lc[i] = rc[i] = 0;
     }
 
     return 0;
