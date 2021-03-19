@@ -1,9 +1,7 @@
-// NTUJ 2961 (KD tree), Runtime Error
+// NTUJ 2961 (KD tree), TLE
 // http://acm.csie.org/ntujudge/problem.php?id=2961 
 #include <bits/stdc++.h>
 #pragma GCC optimize("Ofast")
-#pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,avx2,fma")
-#pragma GCC optimize("unroll-loops")
 using namespace std;
 typedef long long ll;
 typedef pair<int, int> P;
@@ -125,7 +123,7 @@ void insert(int i, int j, int t)
     s[cur].x = i, s[cur].y = j;
     s[cur].v[0] = t, s[cur].v[1] = i * t;
     s[cur].v[2] = j * t, s[cur].v[3] = (ll)i * j * t;
-    insert(rt, cur);
+    //insert(rt, cur);
 }
 ll trans(array<ll, 4> x) { return (ll)(xr + 1) * (yr + 1) * x[0] - (ll)(yr + 1) * x[1] - (ll)(xr + 1) * x[2] + x[3]; }
 
@@ -171,7 +169,10 @@ int main()
             insert(i + 1, l[i], -1);
             insert(i + 1, r[i] + 1, 1);
         }
-        //rt = build(1, cur);
+        for (int i = 1; i <= 4 * n; i++)
+            g[i] = i;
+        t = cur;
+        rt = build(1, cur);
         //printf("rt=%d %d\n", rt, cur);
         while (q--)
         {
@@ -188,8 +189,8 @@ int main()
             ans += trans(query(rt));
             printf("%lld\n", ans);
         }
-        for (int i = 0; i <= 4 * n; i++)
-            lc[i] = rc[i] = 0;
+        //for (int i = 0; i <= 4 * n; i++)
+        //    lc[i] = rc[i] = 0;
     }
 
     return 0;
