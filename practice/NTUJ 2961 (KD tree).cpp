@@ -1,4 +1,5 @@
 // NTUJ 2961 (KD tree), Runtime Error
+// http://acm.csie.org/ntujudge/problem.php?id=2961 
 #include <bits/stdc++.h>
 #pragma GCC optimize("Ofast")
 #pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,avx2,fma")
