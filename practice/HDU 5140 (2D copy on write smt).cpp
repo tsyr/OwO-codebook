@@ -30,7 +30,7 @@ struct node{
 	node *lc,*rc;
 	node() {}
 	node(int _l,int _r){ lc=rc=NULL,nd=NULL,l=_l,r=_r; }
-} node::mem[N], *node::pmem=node2::mem; 
+} node::mem[N], *node::pmem=node::mem; 
 
 int n;
 
