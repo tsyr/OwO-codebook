@@ -21,7 +21,7 @@ struct node2{
 	node2 *lc,*rc;
 	node2() {}
 	node2(int _l,int _r,ll _val){ lc=rc=NULL,l=_l,r=_r,val=_val; }
-} node2::mem2[N], *node2::pmem2=mem2; 
+} node2::mem2[N], *node2::pmem2=node2::mem2; 
 
 struct node{
 	static node mem[N], *pmem;
@@ -30,7 +30,7 @@ struct node{
 	node *lc,*rc;
 	node() {}
 	node(int _l,int _r){ lc=rc=NULL,nd=NULL,l=_l,r=_r; }
-} node::mem[N], *node::pmem=mem; 
+} node::mem[N], *node::pmem=node2::mem; 
 
 int n;
 
