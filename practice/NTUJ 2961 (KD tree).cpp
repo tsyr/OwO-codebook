@@ -16,19 +16,10 @@ struct node
 } s[maxn];
 bool cmp1(int a, int b) { return s[a].x < s[b].x; }
 bool cmp2(int a, int b) { return s[a].y < s[b].y; }
-double a = 0.725;
 int rt, cur, d[maxn], lc[maxn], rc[maxn], L[maxn], R[maxn], D[maxn], U[maxn],
     siz[maxn];
 array<ll, 4> sum[maxn]; //D,iD,jD,ijD
 int g[maxn], t;
-void print(int x)
-{
-    if (!x)
-        return;
-    print(lc[x]);
-    g[++t] = x;
-    print(rc[x]);
-}
 void maintain(int x)
 {
     siz[x] = siz[lc[x]] + siz[rc[x]] + 1;
@@ -65,39 +56,6 @@ int build(int l, int r)
     maintain(g[mid]);
     return g[mid];
 }
-void rebuild(int &x)
-{
-    t = 0;
-    print(x);
-    x = build(1, t);
-}
-bool bad(int x) { return a * siz[x] <= (double)max(siz[lc[x]], siz[rc[x]]); }
-void insert(int &x, int v)
-{
-    if (!x)
-    {
-        x = v;
-        maintain(x);
-        return;
-    }
-    if (d[x] == 1)
-    {
-        if (s[v].x <= s[x].x)
-            insert(lc[x], v);
-        else
-            insert(rc[x], v);
-    }
-    else
-    {
-        if (s[v].y <= s[x].y)
-            insert(lc[x], v);
-        else
-            insert(rc[x], v);
-    }
-    maintain(x);
-    if (bad(x))
-        rebuild(x);
-}
 array<ll, 4> query(int x)
 {
     array<ll, 4> ret;
@@ -123,7 +81,6 @@ void insert(int i, int j, int t)
     s[cur].x = i, s[cur].y = j;
     s[cur].v[0] = t, s[cur].v[1] = i * t;
     s[cur].v[2] = j * t, s[cur].v[3] = (ll)i * j * t;
-    //insert(rt, cur);
 }
 ll trans(array<ll, 4> x) { return (ll)(xr + 1) * (yr + 1) * x[0] - (ll)(yr + 1) * x[1] - (ll)(xr + 1) * x[2] + x[3]; }
 
