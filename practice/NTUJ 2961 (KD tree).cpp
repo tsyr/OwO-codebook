@@ -143,23 +143,20 @@ int main()
         for (int i = 1; i <= n; i++)
         {
             scanf("%d", &h[i]);
-            l[i] = i - 1;
-            r[i] = i + 1;
+            l[i] = r[i] = i;
         }
         h[0] = h[n + 1] = INT_MAX;
         for (int i = 1; i <= n; i++)
-            for (; h[l[i]] <= h[i]; l[i] = l[l[i]])
+            for (; h[l[i] - 1] <= h[i]; l[i] = l[l[i] - 1])
                 ;
         for (int i = n; i >= 1; i--)
-            for (; h[r[i]] <= h[i]; r[i] = r[r[i]])
+            for (; h[r[i] + 1] <= h[i]; r[i] = r[r[i] + 1])
                 ;
         for (int i = 1; i <= n; i++)
         {
-            if (l[i] == 0)
-                l[i] = 1;
-            if (r[i] == n + 1)
-                r[i] = n;
-            //printf("l=%d r=%d\n", l[i], r[i]);
+            l[i] = max(l[i] - 1, 1);
+            r[i] = min(r[i] + 1, n);
+            //printf("%d %d\n", l[i], r[i]);
         }
         cur = rt = t = 0;
         for (int i = 1; i <= n; i++)
