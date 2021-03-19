@@ -57,25 +57,6 @@ node *update(node *t, int l, int r, int x, int val)
     now->v = add(now->lc->v, now->rc->v);
     return now;
 }
-void update2(node *&t, int l, int r, int x, int val)
-{
-    assert(x <= r && x >= l);
-    if (l == r)
-    {
-        t->v = add(t->v, P(val, l * val));
-        //printf("here %d %d \n", l, val);
-        return;
-    }
-    int m = (l + r) / 2;
-    if (x <= m)
-        update2(t->lc, l, m, x, val);
-    else
-        update2(t->rc, m + 1, r, x, val);
-    //t->v = add(t->lc->v, t->rc->v);
-    //printf("l,r %d %d %d\n", l, r, t->v.first);
-    t->v = add(t->v, P(val, x * val));
-    return;
-}
 P query(node *t, int l, int r, int a, int b)
 {
     if (l > b || r < a)
