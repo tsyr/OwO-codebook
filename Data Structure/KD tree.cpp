@@ -1,7 +1,7 @@
 有一個N×N的棋盤，每個格子內有一個整數，初始時的時候全部為0，現在需要維護兩種操作：
 •	1 x y A1≤x,y≤N，A是正整數。將格子x,y裡的數字加上A
 •	2 x1 y1 x2 y2 1≤x1≤x2≤N，1≤y1≤y2≤N。輸出x1,y1,x2,y2這個矩形內的數字和
-•	3 無 終止程式  https://oi-wiki.org/ds/kdt/
+•	3 無 終止程式  https://oi-wiki.org/ds/kdt/ **init時要把lc和rc清空!
 const int maxn = 200010;
 int n, op, xl, xr, yl, yr, lstans;
 struct node{
