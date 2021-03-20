@@ -8,7 +8,5 @@
 4.NTUJ2961, KD tree(TLE), 樹套樹應該會MLE所以沒寫, 持久化線段樹(AC)
 
 比賽：
-1.codeforces #708(div2), solved: A,B,C1,C2,E1, rank:363, 補題: 無
-  (https://codeforces.com/contest/1497)
-2.Educational Codeforces Round 106, solved: A,B,C,D, rank:75, 補題: 無
-  (https://codeforces.com/contest/1499)
+1.codeforces #708(div2), solved: A,B,C1,C2,E1, rank:363, 補題: 無 (https://codeforces.com/contest/1497)
+2.Educational Codeforces Round 106, solved: A,B,C,D, rank:75, 補題: 無 (https://codeforces.com/contest/1499)
