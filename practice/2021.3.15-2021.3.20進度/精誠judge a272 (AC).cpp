@@ -1,4 +1,5 @@
-// 精誠judge a272. 最長遞增子序列的數量, AC
+// 精誠judge a272. 最長遞增子序列的數量, AC 
+// http://zerojudge.cchs.chc.edu.tw/ShowProblem?problemid=a272
 #include <bits/stdc++.h>
 using namespace std;
 typedef long long ll;
