@@ -11,6 +11,8 @@
 
    技巧：持久化線段樹存兩個東西：差分數列D和i*D，這樣就能算前綴和
 
+5. 精誠judge a272, 離散化+BIT (AC)
+
 # 比賽
 
 1. codeforces #708(div2), solved: A,B,C1,C2,E1, rank:363, 補題: 無 (https://codeforces.com/contest/1497)
