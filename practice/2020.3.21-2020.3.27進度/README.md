@@ -1,4 +1,12 @@
 # 進度
+1. SOS(sum of subset) dp
+
+   https://codeforces.com/blog/entry/45223
+
+2. 最佳調度問題的回溯算法
+
+   https://www.jianshu.com/p/1815e5818ec0
+
 
 # 練習
 1. 2021 Kiskstart Round A (https://codingcompetitions.withgoogle.com/kickstart/round/0000000000436140/000000000068c2c3)
