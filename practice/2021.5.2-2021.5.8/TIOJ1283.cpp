@@ -40,8 +40,9 @@ void update(int idx, int l, int r, P p)
     int m = (l + r) / 2;
     if (val(p, v2[m]) > smt[idx].val(v2[m]))
     {
-        smt[idx].p = p;
-        smt[idx].has = 1;
+    	swap(smt[idx].p,p);
+    	if(smt[idx].has==0) p=smt[idx].p;
+    	smt[idx].has=1;
         update(idx << 1, l, m, p);
     }
     else
