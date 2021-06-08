@@ -5,3 +5,4 @@
 2. treap, placement new
 3. KD tree, init()
 4. z value
+5. suffix array
