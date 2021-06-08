@@ -70,4 +70,4 @@ struct SuffixArray{
 		while ((1 << (k + 1)) < len)  k++;
 		return min(d[l][k], d[r - (1 << k) + 1][k]);
 	}
-} ;
+};
