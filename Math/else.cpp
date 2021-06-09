@@ -3,7 +3,7 @@
 3.12 	Lucas’s theorem
 Lucas’ Theorem:
   For non-negative integer n,m and prime P,
-  C(m,n) mod P = C(m/M,n/M) * C(m%M,n%M) mod P
+  C(m,n) mod P = C(m/P,n/P) * C(m%P,n%P) mod P
   = mult_i ( C(m_i,n_i) )
   where m_i is the i-th digit of m in base P, and note that when m_i < n_i, C(m_i,n_i)=0.
 3.13 	Sum of Two Squares Thm (Legendre)
