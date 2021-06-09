@@ -6,3 +6,4 @@
 3. KD tree, init()
 4. z value
 5. suffix array
+6. lucas theorem
