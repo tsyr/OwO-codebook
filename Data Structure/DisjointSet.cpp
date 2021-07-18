@@ -1,6 +1,4 @@
 struct DisjointSet{
-  // save() is like recursive
-  // undo() is like return
   int n, fa[ N ], sz[ N ];
   vector< pair<int*,int> > h;
   vector<int> sp;
