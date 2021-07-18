@@ -7,4 +7,4 @@
 4. z value
 5. suffix array
 6. lucas theorem
-7. redo union-find
+7. undo disjoint set
