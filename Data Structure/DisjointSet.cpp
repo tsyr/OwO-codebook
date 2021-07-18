@@ -1,4 +1,3 @@
-  
 struct DisjointSet{
   // save() is like recursive
   // undo() is like return
