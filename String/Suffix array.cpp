@@ -29,7 +29,7 @@ struct SuffixArray{
 		for (int k = 1; k <= n && nId < n; k <<= 1){
 			int cur = 0;
 			for (int i = n - k; i < n; i++)
-				ord[cur++] = i;
+				ord[cur++] = i; 
 			for (int i = 0; i < n; i++)
 				if (sa[i] >= k)
 					ord[cur++] = sa[i] - k;
