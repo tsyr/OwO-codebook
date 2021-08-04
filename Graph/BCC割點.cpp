@@ -2,8 +2,7 @@ struct BCC{
     struct edge{ int u, v; };
     int dfs_clock;
     int bcc_cnt;           //Number of bcc
-    vector<int> bcc[maxn]; //1~bcc_cnt
-    int pre[maxn], iscut[maxn], bccno[maxn];
+    int pre[maxn], iscut[maxn], bccno[maxn];//1~bcc_cnt
 
     vector<int> v[maxn];
     vector<edge> S;
@@ -34,14 +33,8 @@ struct BCC{
                     while (1){
                         edge now = S.back();
                         S.pop_back();
-                        if (bccno[now.u] != bcc_cnt) {
-                            bccno[now.u] = bcc_cnt;
-                        bcc[bcc_cnt].push_back(now.u);
-                        }
-                        if (bccno[now.v] != bcc_cnt){
-                            bccno[now.v] = bcc_cnt;
-                        bcc[bcc_cnt].push_back(now.v);
-                        }
+                        bccno[now.u] = bcc_cnt;
+                        bccno[now.v] = bcc_cnt;
                         if (now.u == u && now.v == x)
                             break;
                     }
@@ -61,8 +54,6 @@ struct BCC{
         memset(iscut, 0, sizeof(iscut));
         memset(bccno, 0, sizeof(bccno));
         dfs_clock = bcc_cnt = 0;
-        for (int i = 0; i < nn; i++)
-            bcc[i].clear();
         for (int i = 0; i < nn; i++) { 
             //Note that you may want to change the range of index.
             if (!pre[i])
