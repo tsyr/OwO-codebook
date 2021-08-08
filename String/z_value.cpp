@@ -8,3 +8,4 @@ void make_z(string s){
     if(i + z[i] - 1 > r)l = i, r = i + z[i] - 1;
   }
 }
+//後綴s[i,n-1]與原字串s[0,n-1]的最長共同前綴
