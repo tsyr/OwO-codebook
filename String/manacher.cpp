@@ -1,5 +1,5 @@
 void manacher(){
-    string s, ss; // ss="abcdcbd", s=".a.b.c.d.c.b.d"
+    string s, ss; // ss="abcdcbd", s=".a.b.c.d.c.b.d."
     cin >> ss;
     s.resize(ss.size() + ss.size() + 1, '.');
     for (int i = 0; i < ss.size(); i++)
