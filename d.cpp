@@ -42,9 +42,17 @@ int main(){
 					if(S&(1<<j)) 
 						rr*=r[j];
 				}
-				sss+=ss+(1-pp-rr);
-				ppp+=pp+(1-ss-rr);
-				rrr+=rr+(1-pp-ss);
+				double ns=1,np=1,nr=1;
+				for(int j=0;j<n;j++){
+					if(S&(1<<j)) {
+						ns*=(1-s[i]);
+						np*=(1-p[i]);
+						nr*=(1-r[i]);
+					}
+				}
+				sss+=ss+(1-nr-np+ss);
+				ppp+=pp+(1-ns-nr+pp);
+				rrr+=rr+(1-np-ns+rr);
 			}
 			P=1;
 			for(int j=0;j<n;j++){
