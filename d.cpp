@@ -21,6 +21,7 @@ int main(){
 	}
 	dp[0]=1;
 	for(int S=1;S<(1<<n);S++){
+		double sss=0,ppp=0,rrr=0;
 		for(int i=S-1;i>=0;i=(i-1)&S){
 			bool ok=1;
 			double P=1;
@@ -41,9 +42,9 @@ int main(){
 					if(S&(1<<j)) 
 						rr*=r[j];
 				}
-				dp[S]=max(dp[S],ss+(1-pp-rr));
-				dp[S]=max(dp[S],pp+(1-ss-rr));
-				dp[S]=max(dp[S],rr+(1-pp-ss));
+				sss+=ss+(1-pp-rr);
+				ppp+=pp+(1-ss-rr);
+				rrr+=rr+(1-pp-ss);
 			}
 			P=1;
 			for(int j=0;j<n;j++){
@@ -54,7 +55,7 @@ int main(){
 						P*=r[j];
 				}
 			}
-			dp[S]=max(dp[S],P*dp[i]);
+			rrr+=P*dp[i];
 
 			P=1;
 			for(int j=0;j<n;j++){
@@ -65,7 +66,7 @@ int main(){
 						P*=p[j];
 				}
 			}
-			dp[S]=max(dp[S],P*dp[i]);
+			ppp+=P*dp[i];
 
 			P=1;
 			for(int j=0;j<n;j++){
@@ -76,9 +77,12 @@ int main(){
 						P*=s[j];
 				}
 			}
-			dp[S]=max(dp[S],P*dp[i]);
+			sss+=P*dp[i];
 			if(i==0) break;
 		}
+		dp[S]=max(dp[S],sss);
+		dp[S]=max(dp[S],ppp);
+		dp[S]=max(dp[S],rrr);
 	}
 	printf("%.10lf\n",dp[(1<<n)-1]);
 
