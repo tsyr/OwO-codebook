@@ -1,3 +1,35 @@
+dinic加
+int def[210];
+memset(def, 0, sizeof(def)); // init()
+void build(int ss, int tt, int down, int up)
+{ //從s到t的邊，流量限制在區間[down,up]
+    add_edge(ss, tt, up - down);
+    def[ss] += down, def[tt] -= down;
+}
+int solveMax(int st, int de){
+  int sum = 0;
+  for (int i = 1; i <= N; i++){
+      if (def[i] > 0)
+        sum += def[i], add_edge(i, t, def[i]);
+      if (def[i] < 0) add_edge(s, i, -def[i]);
+  }
+  add_edge(de, st, 1 << 30);
+  if (solve() == sum){
+      G[s].clear(); G[t].clear();
+      s = st; t = de;
+      return solve();
+  } else return -1; //無可行解
+}
+
+設輸入的源點/匯點為s/t
+直接跑dinic，cap為up-down，加邊u, v時紀錄def[u]加down，def[v]減down (def:out-in)
+令所有def大於0的總和為sum。
+加入t到s無限大的邊。
+對於與源點/匯點(n+1/n+2)連線的邊的容量和代表著全圖的流量總和。流滿sum時才能平衡。
+判斷最大流是否等於sum，若是，則將源點/匯點(n+1/n+2)邊清空，源點/匯點設為s,t，再輸出最大流。
+無源匯: 跑Dinic，判斷最大流是否等於sum。
+
+
 // 1<=點數<=202,1<=邊數<=999
 #define MAXN 70005
 int sp, tp, cnt, head[210], nxt[MAXN], to[MAXN], cap[MAXN], dis[1010], st, de, def[210], n;
