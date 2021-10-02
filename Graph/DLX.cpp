@@ -59,7 +59,7 @@ struct DLX{
             }
         return ret;
     }
-    void repeat_dance(int d) {
+    void repeat_dance(int d) { //一開始d=0
         if (d + f() >= ansd) return;
         if (R[0] == 0)  {
             if (d < ansd) ansd = d;
@@ -86,11 +86,16 @@ struct DLX{
                 ++S[Col[U[D[j]] = D[U[j]] = j]];
         L[R[c]] = R[L[c]] = c;
     }
-    bool exact_Dance(int d) {
+    bool exact_Dance(int d) { //一開始d=0
         if (R[0] == 0){
             ansd = d;
             return true;
-        }
+        }//如果要最小覆蓋，bool改void，改成下面這段
+         /* if (d > ansd) return;
+        if (R[0] == 0)   {
+            if (d < ansd)  ansd = d;
+            return; 
+        }*/
         int c = R[0];
         for (int i = R[0]; i != 0; i = R[i])
             if (S[i] < S[c])
