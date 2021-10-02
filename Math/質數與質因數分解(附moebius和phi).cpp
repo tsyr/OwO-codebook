@@ -25,3 +25,4 @@ void build(){
 f(n)=∑_(d|n)▒g(d) ↔g(n)=∑_(d|n)▒u(n/d)f(d) 
  (這些質數p兩兩相異)
 ∑_(d|n)▒u(d)/d=ϕ(n)/n
+∑_(d|n)▒ϕ(d) =n
