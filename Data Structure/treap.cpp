@@ -34,6 +34,7 @@ Treap *merge(Treap *a, Treap *b){
     a->r = merge(a->r, b);
     pull(a);
     return a;
+    //持久化：t = new...copy a, t->r=merge(a->r,b), return t
   }
   else{
     push(b);
@@ -48,8 +49,8 @@ void split(Treap *t, int k, Treap *&a, Treap *&b){
     return;
   }
   push(t);
-  if (Size(t->l) + 1 <= k){
-    a = t;
+  if (Size(t->l) + 1 <= k){    
+    a = t; //持久化：a = new...copy t
     split(t->r, k - Size(t->l) - 1, a->r, b);
     pull(a);
   }
