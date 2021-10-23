@@ -4,12 +4,25 @@ using namespace std;
 #define maxn 200005
 
 int n,q;
+bool used[maxn*4];
 struct S
 {
 	int lll,rr,al,ar,sz;
 	ll tot;
 }smt[maxn*4];
 int A[maxn];
+
+void push(int idx,int l,int r){
+	if(l==r) 
+		return;
+	used[idx]=0;
+	smt[idx<<1].al=1-smt[idx<<1].al;
+	smt[idx<<1].ar=1-smt[idx<<1].ar;
+	used[idx<<1]=1;
+	smt[idx<<1|1].al=1-smt[idx<<1|1].al;
+	smt[idx<<1|1].ar=1-smt[idx<<1|1].ar;
+	used[idx<<1|1]=1;
+}
 
 S merge(S s1,S s2){
 	S s;
@@ -48,9 +61,11 @@ void build(int idx,int l,int r){
 }
 
 void update(int idx,int l,int r,int a,int b){
+	push(idx,l,r);
 	if(l>=a&&r<=b){
 		smt[idx].ar=1-smt[idx].ar;
 		smt[idx].al=1-smt[idx].al;
+		used[idx]=1;
 		return;
 	}
 	int m=(l+r)/2;
@@ -66,6 +81,7 @@ void update(int idx,int l,int r,int a,int b){
 }
 
 S query(int idx,int l,int r,int a,int b){
+	push(idx,l,r);
 	if(l>=a&&r<=b)
 		return smt[idx];
 	int m=(l+r)/2;
