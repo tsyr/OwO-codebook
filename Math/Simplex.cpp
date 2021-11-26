@@ -1,3 +1,7 @@
+// max{cx} subject to {Ax<=b,x>=0}
+vector<std::vector<double>> _a;
+std::vector<double> _b;
+std::vector<double> _c;
 struct Simplex
 {
     using Float = double;
@@ -119,3 +123,4 @@ struct Simplex
     std::vector<Float> x;
     Float ans;
 };
+Simplex sim(_a, _b, _c); sim.ans;
