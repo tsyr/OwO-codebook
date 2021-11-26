@@ -23,6 +23,7 @@ struct ntt {
     }
     void fft(ll *c, ll *a, ll *b, int _n, int _m) { //a和b的長度分別是n+1和m+1
         n = _n, m = _m;
+        len = 1;
         while (len <= n + m)
             len <<= 1, bit++;
         for (int i = 0; i < len; i++)
