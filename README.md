@@ -5,3 +5,6 @@
 2. Lexicographically Smallest Rotation
 3. 二分圖匹配
 4. NTT
+
+pdf不會放：
+1. 混合圖歐拉迴路判定
